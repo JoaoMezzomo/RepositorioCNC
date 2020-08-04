@@ -1,0 +1,21 @@
+﻿/*===Geral===*/
+
+body{
+    font-family:'Comic Sans MS';
+}
+
+.Cabecalho {
+    height: 150px;
+    background-image: url("Images/cncvertical.jpg");
+}
+
+.Rodape {
+    height: 50px;
+}
+
+.Corpo {
+    height:90%;
+}
+
+/*===Default.aspx===*/
+
