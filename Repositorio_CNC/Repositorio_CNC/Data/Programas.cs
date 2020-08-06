@@ -6,17 +6,17 @@ using System.Data;
 
 namespace Repositorio_CNC.Data
 {
+    public struct Programa
+    {
+        public int ID;
+        public string NOME;
+        public string TEXTO;
+        public string ARQUIVO;
+        public string PROJETO;
+    }
+
     public class Programas
     {
-        struct Programa 
-        {
-            public int ID;
-            public string NOME;
-            public string TEXTO;
-            public string ARQUIVO;
-            public string PROJETO;
-        }
-
         public DataSet ListarProjetos() 
         {
             string query = "SELECT DISTINCT(PROJETO) FROM PROGRAMAS ORDER BY PROJETO";
@@ -46,6 +46,32 @@ namespace Repositorio_CNC.Data
             DataSet data = database.ExecutarSelectDataBase(query);
 
             return data;
+        }
+
+        public Programa CarregarPrograma(int id) 
+        {
+            Programa programa = new Programa();
+
+            string query = "SELECT * FROM PROGRAMAS WHERE ID = " + id;
+
+            Data database = new Data();
+            DataSet data = database.ExecutarSelectDataBase(query);
+
+            if (data.Tables.Count > 0)
+            {
+                if (data.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in data.Tables[0].Rows)
+                    { 
+                        programa.ID = Convert.ToInt32(row["ID"]);
+                        programa.NOME = row["NOME"].ToString();
+                        programa.TEXTO = row["TEXTO"].ToString();
+                        programa.PROJETO = row["PROJETO"].ToString();
+                    }
+                }
+            }
+
+            return programa;
         }
     }
 }

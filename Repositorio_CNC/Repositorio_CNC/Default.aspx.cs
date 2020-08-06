@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Repositorio_CNC.Data;
 using System.Data;
 using System.IO;
+using System.IO.Compression;
 
 namespace Repositorio_CNC
 {
@@ -27,17 +28,57 @@ namespace Repositorio_CNC
 
         private void Download() 
         {
-            FileInfo file = new FileInfo("");
+            int idPrograma = Convert.ToInt32(GridProgramas.SelectedRow.Cells[1].Text);
 
-            Response.Clear();
-            Response.ClearHeaders();
-            Response.ClearContent();
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
-            Response.AddHeader("Content-Length", file.Length.ToString());
-            Response.ContentType = "text/plain";
-            Response.Flush();
-            Response.TransmitFile(file.FullName);
-            Response.End();
+            if (idPrograma > 0)
+            {
+                string pathPastaBase = PastaBase.BuscarPastaBase();
+
+                Data.Programas prog = new Data.Programas();
+
+                Programa programa = prog.CarregarPrograma(idPrograma);
+
+                pathPastaBase = pathPastaBase + "\\" + programa.PROJETO + "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss");
+
+                if (!Directory.Exists(pathPastaBase))
+                {
+                    Directory.CreateDirectory(pathPastaBase);
+                }
+
+                string pathArquivoTexto = pathPastaBase + "\\" + programa.PROJETO + ".txt";
+
+                using (StreamWriter writer = File.AppendText(pathArquivoTexto))
+                {
+                    writer.WriteLine(programa.TEXTO);
+                }
+
+                if (File.Exists(pathArquivoTexto))
+                {
+                    string pathArquivoTextoZip = PastaBase.BuscarPastaBase() + "\\" + programa.PROJETO + "_" + DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss") + ".zip";
+
+                    ZipFile.CreateFromDirectory(pathPastaBase, pathArquivoTextoZip);
+
+                    if (Directory.Exists(pathPastaBase))
+                    {
+                        Directory.Delete(pathPastaBase, true);
+                    }
+
+                    if (File.Exists(pathArquivoTextoZip))
+                    {
+                        FileInfo file = new FileInfo(pathArquivoTextoZip);
+
+                        Response.Clear();
+                        Response.ClearHeaders();
+                        Response.ClearContent();
+                        Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                        Response.AddHeader("Content-Length", file.Length.ToString());
+                        Response.ContentType = "text/plain";
+                        Response.Flush();
+                        Response.TransmitFile(file.FullName);
+                        Response.End();
+                    }
+                }
+            }
         }
 
         private void Filtrar() 

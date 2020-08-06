@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -79,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\Maquinas.cs" />
+    <Compile Include="Data\PastaBase.cs" />
     <Compile Include="Data\Programas.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
