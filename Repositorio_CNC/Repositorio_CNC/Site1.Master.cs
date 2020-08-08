@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Repositorio_CNC.Controles;
 
 namespace Repositorio_CNC
 {
@@ -17,32 +18,26 @@ namespace Repositorio_CNC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!TestarLogin())
-            //{
-            //    Response.Redirect(Login);
-            //}
+            VerificarLogin();
+            LabelUsuario.Text = Controles.Controles.Usuario;
         }
 
-        private bool TestarLogin() 
+        public void VerificarLogin() 
         {
-            bool retorno = true;
-
             try
             {
-                string usuario = Session["Repositorio_CNC_Usuario"].ToString();
-                string senha = Session["Repositorio_CNC_Senha"].ToString();
+                string usuario = Controles.Controles.Usuario;
+                string senha = Controles.Controles.Senha;
 
                 if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
                 {
-                    retorno = false;
+                    Response.Redirect(Login);
                 }
             }
             catch (Exception)
             {
-                retorno = false;
+                Response.Redirect(Login);
             }
-
-            return retorno;
         }
 
         protected void LinkBtnProgramas_Click(object sender, EventArgs e)
@@ -63,6 +58,14 @@ namespace Repositorio_CNC
         protected void LinkBtnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect(Default);
+        }
+
+        protected void LinkBtnSair_Click(object sender, EventArgs e)
+        {
+            Controles.Controles.Usuario = null;
+            Controles.Controles.Senha = null;
+
+            Response.Redirect(Login);
         }
     }
 }

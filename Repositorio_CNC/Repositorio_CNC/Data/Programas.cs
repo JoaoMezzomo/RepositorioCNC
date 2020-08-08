@@ -64,9 +64,9 @@ namespace Repositorio_CNC.Data
                     foreach (DataRow row in data.Tables[0].Rows)
                     { 
                         programa.ID = Convert.ToInt32(row["ID"]);
-                        programa.NOME = row["NOME"].ToString();
-                        programa.TEXTO = row["TEXTO"].ToString();
-                        programa.PROJETO = row["PROJETO"].ToString();
+                        programa.NOME = row["NOME"] == DBNull.Value ? null : row["NOME"].ToString();
+                        programa.TEXTO = row["TEXTO"] == DBNull.Value ? null : row["TEXTO"].ToString();
+                        programa.PROJETO = row["PROJETO"] == DBNull.Value ? null : row["PROJETO"].ToString();
                     }
                 }
             }

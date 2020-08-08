@@ -24,6 +24,9 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
+                                <li class="nav nav-item">
+                                    <asp:Label class="text-primary pt-2" ID="LabelUsuario" runat="server" Text=""></asp:Label>
+                                </li>
                                 <li class="nav-item active">
                                     <asp:LinkButton class="nav-link" ID="LinkBtnHome" runat="server" OnClick="LinkBtnHome_Click">Home</asp:LinkButton>
                                 </li>
@@ -35,6 +38,9 @@
                                 </li>
                                 <li class="nav-item active">
                                     <asp:LinkButton class="nav-link" ID="LinkBtnTiposDeMaquina" runat="server" OnClick="LinkBtnTiposDeMaquina_Click">Tipos de Máquinas</asp:LinkButton> 
+                                </li>
+                                <li class="nav-item active">
+                                    <asp:LinkButton class="nav-link text-danger" ID="LinkBtnSair" runat="server" OnClick="LinkBtnSair_Click">Sair</asp:LinkButton>
                                 </li>
                             </ul>
                         </div>

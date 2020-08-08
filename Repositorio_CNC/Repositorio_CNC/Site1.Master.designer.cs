@@ -42,6 +42,15 @@ namespace Repositorio_CNC
         protected global::System.Web.UI.WebControls.LinkButton LinkBtnHome1;
 
         /// <summary>
+        /// Controle LabelUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelUsuario;
+
+        /// <summary>
         /// Controle LinkBtnHome.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace Repositorio_CNC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkBtnTiposDeMaquina;
+
+        /// <summary>
+        /// Controle LinkBtnSair.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkBtnSair;
 
         /// <summary>
         /// Controle ContentPlaceHolder1.
