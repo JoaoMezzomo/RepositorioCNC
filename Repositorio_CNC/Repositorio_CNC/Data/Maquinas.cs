@@ -26,5 +26,25 @@ namespace Repositorio_CNC.Data
 
             return data;
         }
+
+        public DataSet ListarTodasMaquinas()
+        {
+            string query = "SELECT ID, NOME, NUMERO FROM MAQUINAS ORDER BY NOME";
+
+            Data database = new Data();
+            DataSet data = database.ExecutarSelectDataBase(query);
+
+            return data;
+        }
+
+        public DataSet ListarMaquinasComFiltro(string where = "")
+        {
+            string query = @"SELECT ID, NOME, NUMERO FROM MAQUINAS" + where;
+
+            Data database = new Data();
+            DataSet data = database.ExecutarSelectDataBase(query);
+
+            return data;
+        }
     }
 }

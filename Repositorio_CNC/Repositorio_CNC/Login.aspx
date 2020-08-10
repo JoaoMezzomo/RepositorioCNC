@@ -14,6 +14,14 @@
         body, html, form {
             height:100%;
         }
+
+        .Caixa {
+            box-shadow: 5px 5px 5px;
+            border-style:solid;
+            border-width:4px;
+            border-color:white;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -23,8 +31,8 @@
             <div class="row bg-dark">
                 <div class="col-sm-0 col-md-0 col-lg-4 col-xl-4"></div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                    <div class="row">
-                        <div class="col-12 text-center pb-4">
+                    <div class="Caixa row">
+                        <div class="col-12 text-center pb-4 pt-2">
                             <h2 class="text-light">Repositório CNC</h2>
                         </div>
                         <div class="col-12">

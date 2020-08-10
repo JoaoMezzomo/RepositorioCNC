@@ -20,6 +20,8 @@ namespace Repositorio_CNC.Controles
 
         #endregion
 
-
+        #region Maquinas
+        public static int IDMaquina;
+        #endregion
     }
 }

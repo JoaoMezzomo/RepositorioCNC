@@ -73,6 +73,7 @@
     <Content Include="Estilos.css" />
     <Content Include="Images\cncvertical.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Maquinas\Maquinas_Edita.aspx" />
     <Content Include="Maquinas\Maquinas_Lista.aspx" />
     <Content Include="Programas\Programas_Edita.aspx" />
     <Content Include="Programas\Programas_Lista.aspx" />
@@ -86,6 +87,7 @@
     <Compile Include="Data\Maquinas.cs" />
     <Compile Include="Data\PastaBase.cs" />
     <Compile Include="Data\Programas.cs" />
+    <Compile Include="Data\Tipo_Maquina.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +101,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinas\Maquinas_Edita.aspx.cs">
+      <DependentUpon>Maquinas_Edita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maquinas\Maquinas_Edita.aspx.designer.cs">
+      <DependentUpon>Maquinas_Edita.aspx</DependentUpon>
     </Compile>
     <Compile Include="Maquinas\Maquinas_Lista.aspx.cs">
       <DependentUpon>Maquinas_Lista.aspx</DependentUpon>
