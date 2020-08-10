@@ -39,7 +39,7 @@ namespace Repositorio_CNC.Data
 
         public DataSet ListarMaquinasComFiltro(string where = "")
         {
-            string query = @"SELECT ID, NOME, NUMERO FROM MAQUINAS" + where;
+            string query = @"SELECT ID, NOME, NUMERO FROM MAQUINAS" + where + " ORDER BY NOME";
 
             Data database = new Data();
             DataSet data = database.ExecutarSelectDataBase(query);

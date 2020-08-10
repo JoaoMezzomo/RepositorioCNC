@@ -130,7 +130,7 @@ namespace Repositorio_CNC
             DataSet dt = programas.ListarProjetos();
 
             ddlProjetos.Items.Clear();
-            ddlProjetos.Items.Add(new ListItem());
+            ddlProjetos.Items.Add(new ListItem().Text = "Projeto");
 
             foreach (DataRow row in dt.Tables[0].Rows)
             {
@@ -148,7 +148,7 @@ namespace Repositorio_CNC
             DataSet dt = maquinas.ListarMaquinasComProgramas();
 
             ddlMaquinas.Items.Clear();
-            ddlMaquinas.Items.Add(new ListItem());
+            ddlMaquinas.Items.Add(new ListItem().Text = "Máquina");
 
             foreach (DataRow row in dt.Tables[0].Rows)
             {

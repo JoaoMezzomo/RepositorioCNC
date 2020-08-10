@@ -30,7 +30,7 @@ namespace Repositorio_CNC.Data
         public DataSet ListarProgramasComFiltro(string where = "")
         {
             string query = @"SELECT PROG.ID, PROG.NOME, PROG.PROJETO FROM PROGRAMAS PROG
-                             LEFT JOIN MAQUINAS_X_PROGRAMAS MXP ON MXP.IDPROGRAMA = PROG.ID" + where;
+                             LEFT JOIN MAQUINAS_X_PROGRAMAS MXP ON MXP.IDPROGRAMA = PROG.ID" + where + " ORDER BY PROG.NOME";
 
             Data database = new Data();
             DataSet data = database.ExecutarSelectDataBase(query);

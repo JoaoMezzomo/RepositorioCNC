@@ -23,5 +23,9 @@ namespace Repositorio_CNC.Controles
         #region Maquinas
         public static int IDMaquina;
         #endregion
+
+        #region TipoMáquina
+        public static int IDTipoMaquina;
+        #endregion
     }
 }

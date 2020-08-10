@@ -83,7 +83,7 @@ namespace Repositorio_CNC.Maquinas
             DataSet dt = tipos.ListarTiposComMaquinas();
 
             ddlTipo.Items.Clear();
-            ddlTipo.Items.Add(new ListItem());
+            ddlTipo.Items.Add(new ListItem().Text = "Tipo");
 
             foreach (DataRow row in dt.Tables[0].Rows)
             {
@@ -104,7 +104,7 @@ namespace Repositorio_CNC.Maquinas
         }
         #endregion
 
-        #region GridProgramas
+        #region GridMaquinas
         protected void GridMaquinas_RowCreated(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)

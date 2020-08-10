@@ -9,7 +9,6 @@
     <title>Repositório CNC</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Estilos.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
 </head>
 <body>
@@ -18,26 +17,26 @@
             <div class="row bg-dark">
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <asp:LinkButton class="navbar-brand" ID="LinkBtnHome1" runat="server" OnClick="LinkBtnHome_Click">Repositório CNC</asp:LinkButton>
+                        <asp:LinkButton class="navbar-brand text-light" ID="LinkBtnHome1" runat="server" OnClick="LinkBtnHome_Click">Repositório CNC</asp:LinkButton>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <asp:LinkButton class="nav-link text-light" ID="LinkBtnHome" runat="server" OnClick="LinkBtnHome_Click">Home</asp:LinkButton>
+                                </li>
+                                <li class="nav-item active">
+                                    <asp:LinkButton class="nav-link text-light" ID="LinkBtnProgramas" runat="server" OnClick="LinkBtnProgramas_Click">Programas</asp:LinkButton>
+                                </li>
+                                <li class="nav-item active">
+                                    <asp:LinkButton class="nav-link text-light" ID="LinkBtnMaquinas" runat="server" OnClick="LinkBtnMaquinas_Click">Máquinas</asp:LinkButton> 
+                                </li>
+                                <li class="nav-item active">
+                                    <asp:LinkButton class="nav-link text-light" ID="LinkBtnTiposDeMaquina" runat="server" OnClick="LinkBtnTiposDeMaquina_Click">Tipos de Máquinas</asp:LinkButton> 
+                                </li>
                                 <li class="nav nav-item">
                                     <asp:Label class="text-primary pt-2" ID="LabelUsuario" runat="server" Text=""></asp:Label>
-                                </li>
-                                <li class="nav-item active">
-                                    <asp:LinkButton class="nav-link" ID="LinkBtnHome" runat="server" OnClick="LinkBtnHome_Click">Home</asp:LinkButton>
-                                </li>
-                                <li class="nav-item active">
-                                    <asp:LinkButton class="nav-link" ID="LinkBtnProgramas" runat="server" OnClick="LinkBtnProgramas_Click">Programas</asp:LinkButton>
-                                </li>
-                                <li class="nav-item active">
-                                    <asp:LinkButton class="nav-link" ID="LinkBtnMaquinas" runat="server" OnClick="LinkBtnMaquinas_Click">Máquinas</asp:LinkButton> 
-                                </li>
-                                <li class="nav-item active">
-                                    <asp:LinkButton class="nav-link" ID="LinkBtnTiposDeMaquina" runat="server" OnClick="LinkBtnTiposDeMaquina_Click">Tipos de Máquinas</asp:LinkButton> 
                                 </li>
                                 <li class="nav-item active">
                                     <asp:LinkButton class="nav-link text-danger" ID="LinkBtnSair" runat="server" OnClick="LinkBtnSair_Click">Sair</asp:LinkButton>

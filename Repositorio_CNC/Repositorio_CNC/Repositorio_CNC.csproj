@@ -77,6 +77,7 @@
     <Content Include="Maquinas\Maquinas_Lista.aspx" />
     <Content Include="Programas\Programas_Edita.aspx" />
     <Content Include="Programas\Programas_Lista.aspx" />
+    <Content Include="TiposDeMaquina\TiposDeMaquina_Edita.aspx" />
     <Content Include="TiposDeMaquina\TiposDeMaquina_Lista.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TiposDeMaquina\TiposDeMaquina_Edita.aspx.cs">
+      <DependentUpon>TiposDeMaquina_Edita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TiposDeMaquina\TiposDeMaquina_Edita.aspx.designer.cs">
+      <DependentUpon>TiposDeMaquina_Edita.aspx</DependentUpon>
     </Compile>
     <Compile Include="TiposDeMaquina\TiposDeMaquina_Lista.aspx.cs">
       <DependentUpon>TiposDeMaquina_Lista.aspx</DependentUpon>
