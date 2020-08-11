@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
-    <Content Include="Estilos.css" />
     <Content Include="Images\cncvertical.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Maquinas\Maquinas_Edita.aspx" />
